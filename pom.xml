@@ -8,7 +8,7 @@
     <artifactId>mahoutTestApps</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>example1</module>
+        <module>sparseMatMatMul</module>
     </modules>
 
     <packaging>pom</packaging>
