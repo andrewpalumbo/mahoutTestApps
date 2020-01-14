@@ -5,11 +5,11 @@
     <parent>
         <artifactId>mahoutTestApps</artifactId>
         <groupId>org.apache.mahout</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sparseMatMatMul</artifactId>
+    <artifactId>sparseMatMatMul_2.12</artifactId>
 
     <repositories>
         <repository>
@@ -26,34 +26,25 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-core_2.12-14.1-20190919.194221-1</artifactId>
-            <version>14.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-core_2.12-14.1-20190919.194221-1-tests</artifactId>
-            <version>14.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-hdfs_2.12-14.1-20190919.194435</artifactId>
-            <version>14.1-SNAPSHOT</version>
+            <artifactId>mahout-core_2.12</artifactId>
+            <version>14.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-spark_2.12-14.1-20190919.194435-1-tests</artifactId>
-            <version>14.1-SNAPSHOT</version>
+            <artifactId>mahout-hdfs_2.12</artifactId>
+            <version>14.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.mahout</groupId>
+            <artifactId>mahout-spark_2.12</artifactId>
+            <version>14.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-spark_2.12-14.1-20190919.194435-1</artifactId>
-            <version>14.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-spark-cli-drivers_2.12-14.1-20190919.194619-1</artifactId>
-            <version>14.1-SNAPSHOT</version>
+            <artifactId>mahout-spark-cli-drivers_2.12</artifactId>
+            <version>14.1</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
