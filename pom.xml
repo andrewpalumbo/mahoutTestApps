@@ -7,9 +7,8 @@
     <groupId>org.apache.mahout</groupId>
     <artifactId>mahoutTestApps</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>sparseMatMatMul</module>
-    </modules>
+
+
 
     <packaging>pom</packaging>
     <name>Apache Mahout</name>
@@ -45,6 +44,7 @@
         <spark.compat.version>2.4</spark.compat.version>
         <hadoop.version>2.4.1</hadoop.version>
         <depgraph.plugin.version>3.3.0</depgraph.plugin.version>
+        <scalatest.maven.plugin.version>2.0.0</scalatest.maven.plugin.version>
     </properties>
 
 
@@ -73,6 +73,10 @@
         <tag>mahoutTestApps-0.0.1
         </tag>
     </scm>
+
+    <modules>
+        <module>sparseMatMatMul</module>
+    </modules>
 
     <dependencyManagement>
          <dependencies>
@@ -245,6 +249,7 @@
               </executions>
             </plugin>
           <plugin>
+
               <groupId>com.github.ferstl</groupId>
               <artifactId>depgraph-maven-plugin</artifactId>
               <version>${depgraph.plugin.version}</version>

@@ -17,23 +17,19 @@
 
 package org.apache.mahout.exampleApp1
 
-import org.apache.mahout.sparkbindings.test.{DistributedSparkSuite,LoggerConfiguration}
-import org.apache.mahout.sparkbindings.SparkDistributedContext
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
-
-import org.apache.mahout.sparkbindings
-
+import org.apache.mahout.sparkbindings.SparkDistributedContext
 import org.apache.mahout.sparkbindings
 import org.apache.log4j.Logger
 import org.apache.mahout._
-import common.RandomUtils
 import org.apache.mahout.math._
-import math.{Matrices, Matrix}
-import drm._
-import org.apache.mahout.math.drm.DrmLike
+import math.Matrix
+import math.drm.DistributedContext
+import math.drm._
 import scalabindings._
 import RLikeOps._
+import RLikeDrmOps._
 
 import scala.reflect
 
@@ -75,14 +71,16 @@ class sparseMatMatMul(val _m: Int,
         (keys -> blockB)
     }
 
+    var i: Int = 0
+    //var drmC: DrmLike[Int] = drmParallelizeEmpty(m,s,para)
     var time = System.currentTimeMillis()
-      for (val i = [1 to 10])
-        val drmC = drmA %*% drmB
+    for (i <- 1 to 10) {
+      val drmC = (drmA %*% drmB)
 
-    // trigger computation
-    drmC.numRows()
+      // trigger computation by calling numRows()
+      drmC.numRows()
+    }
 
-    // Note that this timer more includes the *creation* of large random Sparse DRMs.
     time = System.currentTimeMillis() - time
 
     // this timer is meant as a sanity check and an apples to apples test, for comparing multiplication methods across
@@ -121,10 +119,10 @@ class sparseMatMatMul(val _m: Int,
 
 
       val sparkConf = new SparkConf()
-        sparkConf("master", master)
+      sparkConf.setMaster(master)
+        .setAppName("SparseMatMatMul-example")
 
-      val sctx: SparkContext = SparkContext(sparkConf)
-
+      val sctx: SparkContext = new SparkContext(sparkConf)
       implicit val ctx= new SparkDistributedContext(sctx)
 
       val sMmm = new sparseMatMatMul(mxM,
@@ -134,15 +132,11 @@ class sparseMatMatMul(val _m: Int,
                         pctDense,
                         seed)
 
-      val wallClopckTime: Long = sMmm.timeSparseDRMMMul()
-
+      val wallClockTime: Long = sMmm.timeSparseDRMMMul()
 
       val log = Logger.getLogger(sMmm.getClass)
 
-
-      log.trace(String.format("tWallclock Tome to multiply drmA %*% drmB =  $L",wallClopckTime))
-
-
+     // log.trace(String.format("tWallclock Tome to multiply drmA %*% drmB =  $L", wallClockTime))
 
     }
 }
