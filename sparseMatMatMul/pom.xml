@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sparseMatMatMul_2.12</artifactId>
+    <artifactId>sparseMatMatMul_${scala.compat.version}</artifactId>
     <packaging>jar</packaging>
 
     <repositories>
@@ -35,29 +35,29 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-core_2.12</artifactId>
+            <artifactId>mahout-core_${scala.compat.version}</artifactId>
             <version>14.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-hdfs_2.12</artifactId>
+            <artifactId>mahout-hdfs_${scala.compat.version}</artifactId>
             <version>14.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-spark_2.12</artifactId>
+            <artifactId>mahout-spark_${scala.compat.version}</artifactId>
             <version>14.1</version>
             <classifier>tests</classifier>
         </dependency>
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-spark_2.12</artifactId>
+            <artifactId>mahout-spark_${scala.compat.version}</artifactId>
             <version>14.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-spark-cli-drivers_2.12</artifactId>
+            <artifactId>mahout-spark-cli-drivers_${scala.compat.version}</artifactId>
             <version>14.1</version>
         </dependency>
         <dependency>
@@ -77,73 +77,6 @@
     </plugin>
 
      no rat for now -->
-
-
-    <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-    </plugin>
-
-    <plugin>
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-        <version>4.0.2</version>
-        <executions>
-            <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                    <goal>doc-jar</goal>
-                </goals>
-            </execution>
-            <execution>
-                <id>add-scala-sources</id>
-                <phase>initialize</phase>
-                <goals>
-                    <goal>add-source</goal>
-                </goals>
-            </execution>
-            <execution>
-                <id>scala-compile</id>
-                <phase>process-resources</phase>
-                <goals>
-                    <goal>compile</goal>
-                </goals>
-            </execution>
-            <execution>
-                <id>scala-test-compile</id>
-                <phase>process-test-resources</phase>
-                <goals>
-                    <goal>testCompile</goal>
-                </goals>
-            </execution>
-        </executions>
-    </plugin>
-
-    <!--this is what scalatest recommends to do to enable scala tests -->
-    <!-- disable surefire -->
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-            <skipTests>true</skipTests>
-        </configuration>
-    </plugin>
-    <!-- enable scalatest -->
-    <plugin>
-        <groupId>org.scalatest</groupId>
-        <artifactId>scalatest-maven-plugin</artifactId>
-        <version>${scalatest.maven.plugin.version}</version>
-        <executions>
-            <execution>
-                <id>test</id>
-                <goals>
-                    <goal>test</goal>
-                </goals>
-            </execution>
-        </executions>
-        <configuration>
-            <argLine>-Xmx4g</argLine>
-        </configuration>
-    </plugin>
     </plugins>
     </build>
 

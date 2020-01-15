@@ -82,23 +82,23 @@
          <dependencies>
              <dependency>
                  <groupId>org.apache.mahout</groupId>
-                 <artifactId>mahout-core_2.12</artifactId>
+                 <artifactId>mahout-core_${scala.compat.version}</artifactId>
                  <version>14.1</version>
              </dependency>
              <dependency>
                  <groupId>org.apache.mahout</groupId>
-                 <artifactId>mahout-hdfs_2.12</artifactId>
+                 <artifactId>mahout-hdfs_${scala.compat.version}</artifactId>
                  <version>14.1</version>
              </dependency>
 
              <dependency>
                  <groupId>org.apache.mahout</groupId>
-                 <artifactId>mahout-spark_2.12</artifactId>
+                 <artifactId>mahout-spark_${scala.compat.version}</artifactId>
                  <version>14.1</version>
              </dependency>
              <dependency>
                  <groupId>org.apache.mahout</groupId>
-                 <artifactId>mahout-spark-cli-drivers_2.12</artifactId>
+                 <artifactId>mahout-spark-cli-drivers_${scala.compat.version}</artifactId>
                  <version>14.1</version>
              </dependency>
 
@@ -127,7 +127,7 @@
              <dependency>
                  <groupId>org.scala-tools</groupId>
                  <artifactId>maven-scala-plugin_${scala.compat.version}</artifactId>
-                 <version>2.12.2</version>
+                 <version>3.4.2</version>
              </dependency>
 
 
