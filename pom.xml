@@ -98,6 +98,12 @@
              </dependency>
              <dependency>
                  <groupId>org.apache.mahout</groupId>
+                 <artifactId>mahout-spark_2.12</artifactId>
+                 <version>14.1</version>
+                 <classifier>tests</classifier>
+             </dependency>
+             <dependency>
+                 <groupId>org.apache.mahout</groupId>
                  <artifactId>mahout-spark-cli-drivers_${scala.compat.version}</artifactId>
                  <version>14.1</version>
              </dependency>
