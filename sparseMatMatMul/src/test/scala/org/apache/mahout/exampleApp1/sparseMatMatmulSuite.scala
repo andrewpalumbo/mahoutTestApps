@@ -1,15 +1,18 @@
 package org.apache.mahout.exampleApp1
 
+import org.apache.log4j.Logger
+import org.apache.mahout.exampleApp1._
 import org.apache.mahout.sparkbindings.test.DistributedSparkSuite
 import org.scalatest.FunSuite
-import org.slf4j.Logger
 
 class sparseMatMatmulSuite extends FunSuite with DistributedSparkSuite  {
 
 
-  val log = Logger(this.getClass())
+  val log: Logger = Logger.getLogger(this.getClass())
+
+
   test("simpleSparseMatMatMull") {
-      val simpleSparseMatMatMull = sparseMatMatMul(
+      val simpleSparseMatMatMull = new sparseMatMatMul(
         _m  = 500,
         _n = 1000,
         _s = 1000,
