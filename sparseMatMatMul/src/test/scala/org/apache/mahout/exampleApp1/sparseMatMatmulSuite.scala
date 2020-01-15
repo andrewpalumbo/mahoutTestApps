@@ -14,8 +14,9 @@ class sparseMatMatmulSuite extends FunSuite with DistributedSparkSuite  {
 
   test("simpleSparseMatMatMull") {
 
-    val sMmm = sparseMatMatMul( )
-    val wallClockTime: Long = sMmm.timeSparseDRMMMul(_m  = 500, _n = 1000, _s = 1000, _para  = 2, _pctDense = .01, _seed = 1234L)
+    val sMmm = new sparseMatMatMul(500, 100, 1000, 2, .01, 1234L)
+    val wallClockTime: Long =
+      sMmm.timeSparseDRMMMul(m  = 500, n = 1000, s = 1000, para  = 2, pctDense = .01, seed = 1234L)
 
     assert(wallClockTime > 0)
 

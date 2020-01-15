@@ -90,7 +90,7 @@ class sparseMatMatMul(val _m: Int,
 
 }
 
-  object sparseMatMatMul {
+  /*object sparseMatMatMul {
 
     def main(args: Array[String]): Unit = {
 
@@ -139,4 +139,4 @@ class sparseMatMatMul(val _m: Int,
      // log.trace(String.format("tWallclock Tome to multiply drmA %*% drmB =  $L", wallClockTime))
 
     }
-}
+*/}
