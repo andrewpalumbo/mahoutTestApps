@@ -6,7 +6,7 @@
 
     <groupId>org.apache.mahout</groupId>
     <artifactId>mahoutTestApps</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
 
 
 
@@ -70,7 +70,7 @@
     <!-- Required for Release Plugin -->
     <scm>
         <connection>scm:git:git@github.com:andrewpalumbo/mahoutTestApps.git</connection>
-        <tag>mahoutTestApps-0.0.1
+        <tag>mahoutTestApps-${project.version}
         </tag>
     </scm>
 
