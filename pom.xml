@@ -54,6 +54,14 @@
             <name>Apache Snapshot Repository</name>
             <url>https://repository.apache.org/snapshots</url>
             <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>apache.releases.https</id>
+            <name>Apache Staging Repository</name>
+            <url>https://repository.apache.org/service/local/staging/deploy/maven2/</url>
+            <releases>
                 <enabled>true</enabled>
             </releases>
         </repository>
@@ -75,11 +83,6 @@
              </dependency>
              <dependency>
                  <groupId>org.apache.mahout</groupId>
-                 <artifactId>mahout-core_2.12</artifactId>
-                 <version>14.1</version>
-             </dependency>
-             <dependency>
-                 <groupId>org.apache.mahout</groupId>
                  <artifactId>mahout-hdfs_2.12</artifactId>
                  <version>14.1</version>
              </dependency>
@@ -91,13 +94,8 @@
              </dependency>
              <dependency>
                  <groupId>org.apache.mahout</groupId>
-                 <artifactId>mahout-spark_2.12</artifactId>
-                 <version>14.1</version>
-             </dependency>
-             <dependency>
-                 <groupId>org.apache.mahout</groupId>
                  <artifactId>mahout-spark-cli-drivers_2.12</artifactId>
-                 <version>14.1-SNAPSHOT</version>
+                 <version>14.1</version>
              </dependency>
 
 
